@@ -166,6 +166,10 @@ def get_marker_style(line):
         style["alpha"] = 1
 
     style["facecolor"] = export_color(line.get_markerfacecolor())
+    
+    if style["facecolor"] == "none":
+        style["facecolor"] = "rgba(0, 0, 0, 0)"
+    
     style["edgecolor"] = export_color(line.get_markeredgecolor())
     style["edgewidth"] = line.get_markeredgewidth()
 

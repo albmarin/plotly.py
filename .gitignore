@@ -35,7 +35,7 @@ venv*
 
 # dist files
 build
-dist
+!dist
 plotly.egg-info/
 
 plotly/tests/test_orca/images/*/failed

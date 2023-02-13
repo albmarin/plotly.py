@@ -303,6 +303,12 @@ class PlotlyRenderer(Renderer):
             self.msg += "    Heck yeah, I drew that bar chart\n"
             self.plotly_fig.add_trace(bar),
             if bar_gap is not None:
+                if bar_gap < 0:
+                    bar_gap = 0
+
+                elif bar_gap > 1:
+                    bar_gap = 1
+
                 self.plotly_fig["layout"]["bargap"] = bar_gap
         else:
             self.msg += "    Bar chart not drawn\n"
